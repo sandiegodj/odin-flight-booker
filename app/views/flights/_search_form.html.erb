@@ -1,0 +1,17 @@
+<%= form_tag("/flights", method: "get") do %>
+
+	<%= label_tag(:from_airport, 'Departing') %>
+	<%= select_tag(:from_airport, options_for_select(@airports)) %>
+
+	<%= label_tag(:to_airport, 'Arriving') %>
+	<%= select_tag(:to_airport, options_for_select(@airports)) %>
+
+	<%= label_tag(:date, 'Date') %>
+	<%= select_tag(:date, options_for_select(@dates)) %>
+
+	<%= label_tag(:passengers, 'Passengers') %>
+	<%= select_tag(:passengers, options_for_select(@passengers)) %>
+
+	<%= submit_tag("Search") %>
+
+<% end %>

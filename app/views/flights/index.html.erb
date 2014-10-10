@@ -1,19 +1,6 @@
-<%= form_tag("/flights", method: "get") do %>
+<%= render 'search_form' %>
 
-	<%= label_tag(:from_airports, 'Departing') %>
-	<%= select_tag(:from_airports, options_for_select(@airports)) %>
-
-	<%= label_tag(:to_airports, 'Arriving') %>
-	<%= select_tag(:to_airports, options_for_select(@airports)) %>
-
-	<%= label_tag(:date, 'Date') %>
-	<%= select_tag(:date, options_for_select(@dates)) %>
-
-	<%= label_tag(:passengers, 'Passengers') %>
-	<%= select_tag(:passengers, options_for_select(@passengers)) %>
-
-	<%= submit_tag("Search") %>
-
+<% if !@flights.nil? %>
+<%= render 'flight_form' %>
 <% end %>
-
-<%= debug(params) %>.
+<%= debug(params) %>
