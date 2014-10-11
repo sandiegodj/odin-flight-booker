@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for @booking,  :html => {:class => "form-horizontal", :role => "form"} do |f| %>
+			<fieldset>
+				<legend>Passengers</legend>
+				<%= f.hidden_field :flight_id, :value => @flight.id%>	
+				<%= f.fields_for :passengers do |p| %>
+					<div class="form-group">
+						<%= p.label(:name) %>
+						<%= p.text_field(:name) %>
+						<%= p.label(:email) %>
+						<%= p.text_field(:email) %>
+					</div>
+			  	<% end %>
+			  	<%= submit_tag "Submit" %>
+			 </fieldset>
+		<% end %>
+	</div>
+</div>

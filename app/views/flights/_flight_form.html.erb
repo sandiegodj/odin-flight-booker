@@ -1,35 +1,34 @@
-#form for bookings
-
-<div>
-	<%= form_tag("/bookings#new", method: 'get') do %>
-		<table>
+<div class="col-md-8 col-md-offset-3" id="flights" >
+	<%= form_tag(new_booking_path, method: "get") do %>
+		<table class="table table-striped table-condensed">
 			<thead>
-				<tr>Select</tr>
-				<tr>Date</tr>
-				<tr>Departing</tr>
-				<tr>Arriving</tr>
-				<tr>Time</tr>
-				<tr>Duration</tr>
+				<tr>
+					<th>Select</th>
+					<th>Flight #</th>
+					<th>Date</th>
+					<th>Departing</th>
+					<th>Arriving</th>
+					<th>Time</th>
+					<th>Duration</th>
+				</tr>
 			</thead>
 			<tbody>
-		<% @flights.each do |f| %>
-		<tr>
-			<td><%= radio_button_tag(:flight, f.id) %></td>
-			<td><%= f.date.strftime("%B %d %Y") %></td>	
-			<td><%= f.from_airport.airport_code %></td>	
-			<td><%= f.to_airport.airport_code %></td>
-			<td><%= f.date.strftime("%I:%M%p") %></td>
-			<td><%= f.duration %></td>
-		</tr>
-		<% end %>
-		</tbody>
+				<% @flights.each do |f| %>
+					<tr>
+						<td><%= radio_button_tag(:flight, f.id) %></td>
+						<td><%= f.id %></td>
+						<td><%= f.date.strftime("%B %d, %Y") %></td>	
+						<td><%= f.from_airport.airport_code %></td>	
+						<td><%= f.to_airport.airport_code %></td>
+						<td><%= f.date.strftime("%I:%M%p") %></td>
+						<td><%= f.duration %></td>
+					</tr>
+				<% end %>
+			</tbody>
 		</table>
 		<%= hidden_field_tag(:passengers, params[:passengers]) %>
-		<%= submit_tag("Submit") %>
+		<%= submit_tag "Submit" %>
 	<% end %>
 </div>
 
-
-
-#need ot have passengers here as a hidden value
 

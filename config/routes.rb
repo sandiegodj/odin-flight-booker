@@ -1,6 +1,6 @@
 OdinFlightBooker::Application.routes.draw do
   resources :flights,  only: [:index]
-  resources :bookings, only: [:new,:create]
+  resources :bookings, only: [:new, :create,:show]
   
   root 'flights#index'
   # The priority is based upon order of creation: first created -> highest priority.

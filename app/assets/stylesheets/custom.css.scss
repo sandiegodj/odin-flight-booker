@@ -1,0 +1,27 @@
+@import "bootstrap";
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+#flights{
+	padding-top:50px;
+}
+
+h1, h2, h3, legend, form{
+	text-align: center;
+}
+

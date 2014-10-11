@@ -1,0 +1,11 @@
+<h1><strong>Booking Confirmation</strong></h2>
+
+<%= render 'display', o: @booking.flight %>
+
+<h4><strong>Passengers</strong></h4>
+
+<% @booking.passengers.each do |p| %>
+		<p> <%="#{p.name}" %></p>
+<% end %>
+
+<i><h5>Confirmation number: <%= @booking.id %></h5></i>
