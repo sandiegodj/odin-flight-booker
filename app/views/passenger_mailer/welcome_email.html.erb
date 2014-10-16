@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Booking confirmation for <%= @passenger.name %></h1>
+    <p>
+      You're all set to fly out of <%= @flight.from_airport.airport_code %> at <%= @flight.date.strftime("%I:%M%p") %> on <%= @flight.date.strftime("%B %d, %Y") %> and arrive at <%=@flight.to_airport.airport_code %> <%=@flight.duration %> later. <br>
+    </p>
+
+    <p>Thanks again and have a great day!</p>
+    <p>The Odin Flight Booker Team </p>
+  </body>
+</html>

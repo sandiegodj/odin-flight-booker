@@ -1,0 +1,5 @@
+Booking confirmation for <%= @passenger.name %>
+========================================
+You're all set to fly out of <%= @flight.from_airport.airport_code %> at at <%= @flight.date.strftime("%I:%M%p") %> and arrive at <%=@flight.from_airport.airport_code %> <%=@flight.duration %> later on <%= @flight.date.strftime("%B %d, %Y") %>
+
+Thanks for joining and have a great day.
