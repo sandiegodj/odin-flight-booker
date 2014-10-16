@@ -5,6 +5,7 @@ class PassengerMailer < ActionMailer::Base
     @passenger = passenger
     @booking = @passenger.booking
     @flight = @booking.flight
+    @url = booking_url(@booking)
 
     email_with_name = "#{@passenger.name} <#{@passenger.email}>"
 
